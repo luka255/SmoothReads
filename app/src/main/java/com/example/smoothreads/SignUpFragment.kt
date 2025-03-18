@@ -1,14 +1,15 @@
 package com.example.smoothreads
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.smoothreads.databinding.FragmentSignUpBinding
+
 
 class SignUpFragment : Fragment() {
 
@@ -16,23 +17,39 @@ class SignUpFragment : Fragment() {
     private lateinit var emailEditText : EditText
     private lateinit var passwordEditText : EditText
     private lateinit var signUpButton: Button
+    private lateinit var backToSignInButton : Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_sign_up, container, false)
+    ): View {
 
-        val backToSignInButton: Button = view.findViewById(R.id.backToSignIn)
-        val signInButton: Button = view.findViewById(R.id.signUpButton)
+        val binding = FragmentSignUpBinding.inflate(inflater,container,false)
 
-        emailEditText= binding.editmailText
+        nameEditText = binding.nameInputSignUp
+        emailEditText = binding.EmailInputSignUp
+        passwordEditText = binding.passwordInputSignUp
+        signUpButton = binding.signUpButton
+        backToSignInButton = binding.backToSignIn
 
-        signInButton.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SignInFragment())
-                .addToBackStack(null)
-                .commit()
+        signUpButton.setOnClickListener {
+            val name = nameEditText.text.toString()
+            val email = emailEditText.text.toString()
+            val password = passwordEditText.text.toString()
+
+            if(validRegistrationForm(name,email,password))
+            {
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, SignInFragment())
+                    .addToBackStack(null)
+                    .commit()
+
+                Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
+            }
+            else
+            {
+                Toast.makeText(requireContext(), "name or email is not valid", Toast.LENGTH_SHORT).show()
+            }
         }
 
         backToSignInButton.setOnClickListener{
@@ -43,7 +60,7 @@ class SignUpFragment : Fragment() {
         }
 
 
-        return view
+        return binding.root
     }
     private fun isValidEmail(email:String):Boolean{
         val regex = "^[a-zA-Z0-9._-]+@[a-zAZ0-9.-]+\\.[a-zA-Z]{2,}$".toRegex()
