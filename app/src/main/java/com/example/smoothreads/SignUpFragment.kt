@@ -19,6 +19,7 @@ class SignUpFragment : Fragment() {
     private lateinit var signUpButton: Button
     private lateinit var backToSignInButton : Button
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -80,7 +81,7 @@ class SignUpFragment : Fragment() {
             return false
         }
         if(!isValidPassword(password)){
-            passwordEditText.error = "invalid password"
+            passwordEditText.error = "Password must be at least 8 chars, include 1 uppercase, 1 number, and 1 special char"
             return false
         }
         return true

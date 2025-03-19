@@ -7,23 +7,25 @@
     tools:context=".SignInFragment">
 
     <TextView
-        android:id="@+id/header_title_signUp"
+        android:id="@+id/header_title_signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:fontFamily="serif"
         android:text="SmoothReads"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/Email_input_signUp"
+        android:id="@+id/email_input_signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -32,13 +34,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_title_signUp" />
+        app:layout_constraintTop_toBottomOf="@+id/header_title_signIn"
+        tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/password_input_signUp"
+        android:id="@+id/password_input_signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -47,27 +51,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email_input_signUp" />
+        app:layout_constraintTop_toBottomOf="@+id/email_input_signIn"
+        tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/SignInbutton"
+        android:id="@+id/signInbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="100dp"
         android:text="Sign In"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_input_signUp" />
+        app:layout_constraintTop_toBottomOf="@+id/password_input_signIn"
+        tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/SignUpbutton_signIn"
+        android:id="@+id/signUpButtonSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="32dp"
         android:text="Sign Up"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_input_signUp" />
+        app:layout_constraintTop_toBottomOf="@+id/password_input_signIn"
+        tools:ignore="HardcodedText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
