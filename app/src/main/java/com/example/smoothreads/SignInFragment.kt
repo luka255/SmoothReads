@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.smoothreads.databinding.FragmentSignInBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SignInFragment : Fragment() {
 
@@ -35,8 +36,13 @@ class SignInFragment : Fragment() {
 
             if(!validSignIn(email,password))
                 Toast.makeText(requireContext(),"email/password is invalid", Toast.LENGTH_SHORT).show()
-            else
-                Toast.makeText(requireContext(),"signed in successfully", Toast.LENGTH_SHORT).show()
+
+            Toast.makeText(requireContext(),"signed in successfully", Toast.LENGTH_SHORT).show()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, MyBooksFragment())
+                .addToBackStack(null)
+                .commit()
+
 
         }
 
@@ -59,6 +65,9 @@ class SignInFragment : Fragment() {
     {
         val testMail : String = "test@gmail.com"
         val testPassword : String = "testPassword123!"
+
+        val bottomNavigationView = requireActivity().findViewById<BottomNavigationView>(R.id.bottom_nav)
+        bottomNavigationView.visibility = View.VISIBLE
 
         if(!isValidEmail(email))
             Toast.makeText(requireContext(),"invalid email", Toast.LENGTH_SHORT).show()
