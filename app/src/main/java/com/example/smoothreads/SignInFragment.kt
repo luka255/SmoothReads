@@ -51,7 +51,7 @@ class SignInFragment : Fragment() {
 
         signUpButton.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SignUpFragment())
+                .replace(R.id.nav_host_fragment, SignUpFragment())
                 .addToBackStack(null)
                 .commit()
         }

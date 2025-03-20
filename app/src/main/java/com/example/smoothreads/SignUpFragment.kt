@@ -41,7 +41,7 @@ class SignUpFragment : Fragment() {
             if(validRegistrationForm(name,email,password))
             {
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, SignInFragment())
+                    .replace(R.id.nav_host_fragment, SignInFragment())
                     .addToBackStack(null)
                     .commit()
 
@@ -55,7 +55,7 @@ class SignUpFragment : Fragment() {
 
         backToSignInButton.setOnClickListener{
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SignInFragment())
+                .replace(R.id.nav_host_fragment, SignInFragment())
                 .addToBackStack(null)
                 .commit()
         }

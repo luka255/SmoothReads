@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/myBooksFragment">
+
+    <fragment
+        android:id="@+id/myBooksFragment"
+        android:name="com.example.smoothreads.MyBooksFragment"
+        android:label="MyBooks"
+        tools:layout="@layout/fragment_my_books">
+    </fragment>
+
+    <fragment
+        android:id="@+id/discoveryFragment"
+        android:name="com.example.smoothreads.DiscoveryFragment"
+        android:label="Discovery"
+        tools:layout="@layout/fragment_discovery">
+        <action
+            android:id="@+id/action_discovery_to_myBooks"
+            app:destination="@id/myBooksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.smoothreads.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_search_to_myBooks"
+            app:destination="@id/myBooksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.example.smoothreads.MoreFragment"
+        android:label="More"
+        tools:layout="@layout/fragment_more">
+        <action
+            android:id="@+id/action_more_to_myBooks"
+            app:destination="@id/myBooksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.smoothreads.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signIn_to_myBooks"
+            app:destination="@id/myBooksFragment" />
+    </fragment>
+
+</navigation>
+

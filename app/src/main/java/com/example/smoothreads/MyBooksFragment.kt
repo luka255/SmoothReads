@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.smoothreads.databinding.FragmentMyBooksBinding
 import com.google.android.material.navigation.NavigationBarView
 
@@ -17,17 +18,24 @@ class MyBooksFragment : Fragment() {
     private lateinit var readImageButton: ImageButton
     private lateinit var navBar : NavigationBarView
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         val binding = FragmentMyBooksBinding.inflate(inflater, container, false)
+        val navController = findNavController()
+
 
         searchView = binding.searchMyBooks
         wantToReadImageButton = binding.wantToReadImageButton
         readImageButton = binding.ReadImageButton
         navBar = binding.navBar
+
+
+
+
 
         return binding.root
     }
