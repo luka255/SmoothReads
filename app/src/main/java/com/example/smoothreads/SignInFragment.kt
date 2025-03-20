@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.smoothreads.databinding.FragmentSignInBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
 class SignInFragment : Fragment() {
 
     private lateinit var emailEditText: EditText
@@ -27,21 +28,23 @@ class SignInFragment : Fragment() {
 
         emailEditText = binding.emailInputSignIn
         passwordEditText = binding.passwordInputSignIn
-        signInButton = binding.signInbutton
+        signInButton = binding.signInButton
         signUpButton = binding.signUpButtonSignIn
 
         signInButton.setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            if(!validSignIn(email,password))
-                Toast.makeText(requireContext(),"email/password is invalid", Toast.LENGTH_SHORT).show()
+            if(!validSignIn(email,password)) {
+                Toast.makeText(requireContext(), "email/password is invalid", Toast.LENGTH_SHORT)
+                    .show()
+            }
+            else {
+                (requireActivity() as MainActivity).findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.VISIBLE
 
-            Toast.makeText(requireContext(),"signed in successfully", Toast.LENGTH_SHORT).show()
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, MyBooksFragment())
-                .addToBackStack(null)
-                .commit()
+                (requireActivity() as MainActivity).replaceFragment(MyBooksFragment())
+
+            }
 
 
         }
@@ -63,11 +66,8 @@ class SignInFragment : Fragment() {
 
     private fun validSignIn(email : String, password : String) : Boolean
     {
-        val testMail : String = "test@gmail.com"
-        val testPassword : String = "testPassword123!"
-
-        val bottomNavigationView = requireActivity().findViewById<BottomNavigationView>(R.id.bottom_nav)
-        bottomNavigationView.visibility = View.VISIBLE
+        val testMail = "test@gmail.com"
+        val testPassword = "testPassword123!"
 
         if(!isValidEmail(email))
             Toast.makeText(requireContext(),"invalid email", Toast.LENGTH_SHORT).show()

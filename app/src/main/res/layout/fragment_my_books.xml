@@ -9,8 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginTop="4dp"
+        android:layout_height="85dp"
         android:background="#FFFB80"
         android:orientation="vertical"
         android:padding="16dp"
@@ -20,17 +19,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
-        android:id="@+id/search_myBooks"
+        android:id="@+id/searchMyBooks"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_title_myBooks" />
+        app:layout_constraintTop_toBottomOf="@+id/headerTitleMyBooks" />
 
     <TextView
-        android:id="@+id/header_title_myBooks"
+        android:id="@+id/headerTitleMyBooks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
@@ -43,49 +42,62 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/wantToReadTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
         android:text="Want To Read"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/search_myBooks" />
+        app:layout_constraintStart_toEndOf="@+id/wantToReadImageButton"
+        app:layout_constraintTop_toBottomOf="@+id/searchMyBooks"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/readTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="88dp"
         android:text="Read"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:layout_editor_absoluteX="182dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toEndOf="@+id/ReadImageButton"
+        app:layout_constraintTop_toBottomOf="@+id/wantToReadTextView"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/wantToReadImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
         android:contentDescription="TODO"
-        android:src="@mipmap/img"
+        android:src="@android:drawable/ic_menu_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_myBooks" />
+        app:layout_constraintTop_toBottomOf="@+id/searchMyBooks"
+        tools:ignore="ContentDescription,HardcodedText" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <ImageButton
+        android:id="@+id/ReadImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:src="@mipmap/img"
+        android:layout_marginTop="12dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/baseline_menu_book_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_myBooks" />
+        app:layout_constraintTop_toBottomOf="@+id/wantToReadImageButton"
+        tools:ignore="ContentDescription,HardcodedText" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
