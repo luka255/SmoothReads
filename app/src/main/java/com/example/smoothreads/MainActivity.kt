@@ -15,11 +15,6 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        if(savedInstanceState == null){
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.nav_host_fragment, SignInFragment())
-                .commit()
-        }
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
@@ -28,13 +23,26 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_my_books -> navController.navigate(R.id.myBooksFragment)
-                R.id.nav_discover -> navController.navigate(R.id.discoveryFragment)
-                R.id.nav_search -> navController.navigate(R.id.searchFragment)
-                R.id.nav_more -> navController.navigate(R.id.moreFragment)
+                R.id.nav_my_books -> {
+                    navController.navigate(R.id.myBooksFragment)
+                    true
+                }
+                R.id.nav_discover -> {
+                    navController.navigate(R.id.discoveryFragment)
+                    true
+                }
+                R.id.nav_search -> {
+                    navController.navigate(R.id.searchFragment)
+                    true
+                }
+                R.id.nav_more -> {
+                    navController.navigate(R.id.moreFragment)
+                    true
+                }
+                else -> false
             }
-            true
         }
+
 
     }
 

@@ -33,10 +33,6 @@ class MyBooksFragment : Fragment() {
         readImageButton = binding.ReadImageButton
         navBar = binding.navBar
 
-
-
-
-
         return binding.root
     }
 }

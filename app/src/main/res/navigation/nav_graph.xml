@@ -2,13 +2,22 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/myBooksFragment">
+    app:startDestination="@id/signInFragment">
 
     <fragment
         android:id="@+id/myBooksFragment"
         android:name="com.example.smoothreads.MyBooksFragment"
         android:label="MyBooks"
         tools:layout="@layout/fragment_my_books">
+        <action
+            android:id="@+id/action_myBooks_to_discovery"
+            app:destination="@id/discoveryFragment" />
+        <action
+            android:id="@+id/action_myBooks_to_search"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_myBooks_to_more"
+            app:destination="@id/moreFragment" />
     </fragment>
 
     <fragment
@@ -19,6 +28,12 @@
         <action
             android:id="@+id/action_discovery_to_myBooks"
             app:destination="@id/myBooksFragment" />
+        <action
+            android:id="@+id/action_discovery_to_search"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_discovery_to_more"
+            app:destination="@id/moreFragment" />
     </fragment>
 
     <fragment
@@ -29,6 +44,12 @@
         <action
             android:id="@+id/action_search_to_myBooks"
             app:destination="@id/myBooksFragment" />
+        <action
+            android:id="@+id/action_search_to_discovery"
+            app:destination="@id/discoveryFragment" />
+        <action
+            android:id="@+id/action_search_to_more"
+            app:destination="@id/moreFragment" />
     </fragment>
 
     <fragment
@@ -39,6 +60,15 @@
         <action
             android:id="@+id/action_more_to_myBooks"
             app:destination="@id/myBooksFragment" />
+        <action
+            android:id="@+id/action_more_to_discovery"
+            app:destination="@id/discoveryFragment" />
+        <action
+            android:id="@+id/action_more_to_search"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_more_to_signIn"
+            app:destination="@id/signInFragment" />
     </fragment>
 
     <fragment

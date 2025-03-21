@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.smoothreads.databinding.FragmentSignInBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -25,6 +26,7 @@ class SignInFragment : Fragment() {
     ): View? {
 
         val binding = FragmentSignInBinding.inflate(inflater, container, false)
+        val navController = findNavController()
 
         emailEditText = binding.emailInputSignIn
         passwordEditText = binding.passwordInputSignIn
@@ -42,18 +44,13 @@ class SignInFragment : Fragment() {
             else {
                 (requireActivity() as MainActivity).findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.VISIBLE
 
-                (requireActivity() as MainActivity).replaceFragment(MyBooksFragment())
-
+                navController.navigate(R.id.action_signIn_to_myBooks)
             }
-
 
         }
 
         signUpButton.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.nav_host_fragment, SignUpFragment())
-                .addToBackStack(null)
-                .commit()
+            (requireActivity() as MainActivity).replaceFragment(SignUpFragment())
         }
 
         return binding.root

@@ -22,10 +22,12 @@
         android:layout_width="match_parent"
         android:layout_height="76dp"
         android:layout_gravity="bottom"
-        android:visibility="gone"
         android:background="@color/lightYellow"
-        app:menu="@menu/bottom_nav_menu"
+        android:visibility="gone"
         app:labelVisibilityMode="labeled"
-        tools:visibility="visible"/>
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/redBrown"
+        app:itemTextColor="@color/redBrown"
+        tools:visibility="visible" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
