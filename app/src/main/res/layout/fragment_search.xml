@@ -6,17 +6,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SearchFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:background="@color/lightYellow"
-        android:orientation="vertical"
-        android:padding="16dp"
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/linearLayout"
+      android:layout_width="match_parent"
+      android:layout_height="85dp"
+      android:background="@color/lightYellow"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Search"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
     <SearchView
         android:id="@+id/searchView"
@@ -28,72 +39,92 @@
 
     <Button
         android:id="@+id/classicButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:gravity="bottom"
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/button_shape"
+        android:padding="4dp"
+        android:background="@drawable/button_red"
         android:text="@string/classics"
+        app:layout_constraintEnd_toStartOf="@+id/romanceButton"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
-    <Button
-        android:id="@+id/romanceButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="28dp"
-        android:background="@drawable/button_shape"
-        android:text="Romance"
-        app:layout_constraintEnd_toStartOf="@+id/fantasyButton"
-        app:layout_constraintHorizontal_bias="0.906"
-        app:layout_constraintStart_toEndOf="@+id/classicButton"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+  <Button
+      android:id="@+id/romanceButton"
+      android:layout_width="110dp"
+      android:layout_height="60dp"
+      android:layout_marginTop="32dp"
+      android:background="@drawable/button_pink"
+      android:gravity="bottom"
+      android:padding="4dp"
+      android:text="@string/romance"
+      app:layout_constraintEnd_toEndOf="@+id/searchView"
+      app:layout_constraintHorizontal_bias="0.494"
+      app:layout_constraintStart_toStartOf="@+id/searchView"
+      app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
-    <Button
-        android:id="@+id/fantasyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="28dp"
-        android:background="@drawable/button_shape"
-        android:text="Fantasy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+  <Button
+      android:id="@+id/fantasyButton"
+      android:layout_width="110dp"
+      android:layout_height="60dp"
+      android:layout_marginTop="32dp"
+      android:layout_marginEnd="28dp"
+      android:background="@drawable/button_green"
+      android:gravity="bottom"
+      android:padding="4dp"
+      android:text="@string/fantasy"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toEndOf="@+id/romanceButton"
+      app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
-    <Button
+  <Button
         android:id="@+id/fictionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:gravity="bottom"
         android:layout_marginTop="36dp"
-        android:background="@drawable/button_shape"
-        android:text="Fiction"
+        android:backgroundTint="@color/red"
+        android:padding="4dp"
+        android:background="@drawable/button_red"
+        android:text="@string/fiction"
         app:layout_constraintEnd_toStartOf="@+id/nonFictionButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/classicButton" />
 
     <Button
         android:id="@+id/nonFictionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:gravity="bottom"
         android:layout_marginTop="36dp"
-        android:background="@drawable/button_shape"
-        android:text="Non-Fiction"
-        app:layout_constraintTop_toBottomOf="@+id/romanceButton"
-        tools:layout_editor_absoluteX="132dp" />
-
-    <Button
-        android:id="@+id/youngAdultsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/button_shape"
-        android:text="Young Adults"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/red"
+        android:padding="4dp"
+        android:background="@drawable/button_red"
+        android:text="@string/non_nfiction"
+        app:layout_constraintEnd_toEndOf="@+id/romanceButton"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/nonFictionButton"
-        app:layout_constraintTop_toBottomOf="@+id/fantasyButton" />
+        app:layout_constraintStart_toStartOf="@+id/romanceButton"
+        app:layout_constraintTop_toBottomOf="@+id/romanceButton" />
+
+  <Button
+      android:id="@+id/youngAdultsButton"
+      android:layout_width="110dp"
+      android:layout_height="60dp"
+      android:layout_marginTop="36dp"
+      android:layout_marginEnd="16dp"
+      android:background="@drawable/button_red"
+      android:backgroundTint="@color/red"
+      android:gravity="bottom"
+      android:padding="4dp"
+      android:text="@string/young_nadults"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.52"
+      app:layout_constraintStart_toEndOf="@+id/nonFictionButton"
+      app:layout_constraintTop_toBottomOf="@+id/fantasyButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

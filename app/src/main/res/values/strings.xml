@@ -7,4 +7,11 @@
     <string name="search">Search</string>
     <string name="more">More</string>
     <string name="classics">Classics</string>
+    <string name="romance">Romance</string>
+    <string name="young_adults">Young Adults</string>
+    <string name="non_fiction">Non-Fiction</string>
+    <string name="fiction">Fiction</string>
+    <string name="fantasy">Fantasy</string>
+    <string name="non_nfiction">Non\nFiction</string>
+    <string name="young_nadults">Young\nAdults</string>
 </resources>

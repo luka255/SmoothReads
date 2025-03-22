@@ -13,7 +13,7 @@ import com.google.android.material.navigation.NavigationBarView
 
 class MyBooksFragment : Fragment() {
 
-    private lateinit var  searchView: SearchView
+    private lateinit var searchView: SearchView
     private lateinit var wantToReadImageButton: ImageButton
     private lateinit var readImageButton: ImageButton
     private lateinit var navBar : NavigationBarView
