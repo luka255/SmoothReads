@@ -29,40 +29,41 @@
         tools:ignore="HardcodedText" />
   </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+  <SearchView
+      android:id="@+id/searchView"
+      android:layout_width="300dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="60dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.495"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <Button
-        android:id="@+id/classicButton"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:gravity="bottom"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
-        android:padding="4dp"
-        android:background="@drawable/button_red"
-        android:text="@string/classics"
-        app:layout_constraintEnd_toStartOf="@+id/romanceButton"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+  <Button
+      android:id="@+id/classicButton"
+      android:layout_width="110dp"
+      android:layout_height="60dp"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="40dp"
+      android:backgroundTint="@color/red"
+      android:gravity="bottom"
+      android:padding="4dp"
+      android:text="@string/classics"
+      app:layout_constraintEnd_toStartOf="@+id/romanceButton"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
   <Button
       android:id="@+id/romanceButton"
       android:layout_width="110dp"
       android:layout_height="60dp"
-      android:layout_marginTop="32dp"
-      android:background="@drawable/button_pink"
+      android:layout_marginTop="40dp"
+      android:backgroundTint="@color/pink"
       android:gravity="bottom"
       android:padding="4dp"
       android:text="@string/romance"
       app:layout_constraintEnd_toEndOf="@+id/searchView"
-      app:layout_constraintHorizontal_bias="0.494"
       app:layout_constraintStart_toStartOf="@+id/searchView"
       app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
@@ -70,9 +71,9 @@
       android:id="@+id/fantasyButton"
       android:layout_width="110dp"
       android:layout_height="60dp"
-      android:layout_marginTop="32dp"
+      android:layout_marginTop="40dp"
       android:layout_marginEnd="28dp"
-      android:background="@drawable/button_green"
+      android:backgroundTint="@color/green"
       android:gravity="bottom"
       android:padding="4dp"
       android:text="@string/fantasy"
@@ -82,42 +83,39 @@
       app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
   <Button
-        android:id="@+id/fictionButton"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:gravity="bottom"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="@color/red"
-        android:padding="4dp"
-        android:background="@drawable/button_red"
-        android:text="@string/fiction"
-        app:layout_constraintEnd_toStartOf="@+id/nonFictionButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classicButton" />
+      android:id="@+id/fictionButton"
+      android:layout_width="110dp"
+      android:layout_height="60dp"
+      android:layout_marginTop="28dp"
+      android:backgroundTint="@color/cyan"
+      android:gravity="bottom"
+      android:padding="4dp"
+      android:text="@string/fiction"
+      app:layout_constraintEnd_toStartOf="@+id/nonFictionButton"
+      app:layout_constraintHorizontal_bias="0.454"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/classicButton" />
 
-    <Button
-        android:id="@+id/nonFictionButton"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:gravity="bottom"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="@color/red"
-        android:padding="4dp"
-        android:background="@drawable/button_red"
-        android:text="@string/non_nfiction"
-        app:layout_constraintEnd_toEndOf="@+id/romanceButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/romanceButton"
-        app:layout_constraintTop_toBottomOf="@+id/romanceButton" />
+  <Button
+      android:id="@+id/nonFictionButton"
+      android:layout_width="110dp"
+      android:layout_height="60dp"
+      android:layout_marginTop="28dp"
+      android:backgroundTint="@color/darkYellow"
+      android:gravity="bottom"
+      android:padding="4dp"
+      android:text="@string/non_nfiction"
+      app:layout_constraintEnd_toEndOf="@+id/romanceButton"
+      app:layout_constraintStart_toStartOf="@+id/romanceButton"
+      app:layout_constraintTop_toBottomOf="@+id/romanceButton" />
 
   <Button
       android:id="@+id/youngAdultsButton"
       android:layout_width="110dp"
       android:layout_height="60dp"
-      android:layout_marginTop="36dp"
+      android:layout_marginTop="28dp"
       android:layout_marginEnd="16dp"
-      android:background="@drawable/button_red"
-      android:backgroundTint="@color/red"
+      android:backgroundTint="@color/grey"
       android:gravity="bottom"
       android:padding="4dp"
       android:text="@string/young_nadults"

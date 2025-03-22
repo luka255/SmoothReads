@@ -27,10 +27,6 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.myBooksFragment)
                     true
                 }
-                R.id.nav_discover -> {
-                    navController.navigate(R.id.discoveryFragment)
-                    true
-                }
                 R.id.nav_search -> {
                     navController.navigate(R.id.searchFragment)
                     true
@@ -52,5 +48,4 @@ class MainActivity : AppCompatActivity() {
         transaction.addToBackStack(null)
         transaction.commit()
     }
-
 }

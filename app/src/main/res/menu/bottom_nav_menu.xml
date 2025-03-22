@@ -7,9 +7,6 @@
         android:id="@+id/nav_my_books"
         android:title="@string/my_books" />
     <item
-        android:id="@+id/nav_discover"
-        android:title="@string/discover" />
-    <item
         android:id="@+id/nav_search"
         android:title="@string/search"/>
 

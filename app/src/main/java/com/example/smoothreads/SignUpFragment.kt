@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.smoothreads.databinding.FragmentSignUpBinding
 
 
@@ -26,6 +27,7 @@ class SignUpFragment : Fragment() {
     ): View {
 
         val binding = FragmentSignUpBinding.inflate(inflater,container,false)
+        val navController = findNavController()
 
         nameEditText = binding.nameInputSignUp
         emailEditText = binding.EmailInputSignUp
@@ -40,10 +42,8 @@ class SignUpFragment : Fragment() {
 
             if(validRegistrationForm(name,email,password))
             {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.nav_host_fragment, SignInFragment())
-                    .addToBackStack(null)
-                    .commit()
+
+                navController.navigate(R.id.action_signUp_to_signIn)
 
                 Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
             }
@@ -54,10 +54,7 @@ class SignUpFragment : Fragment() {
         }
 
         backToSignInButton.setOnClickListener{
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.nav_host_fragment, SignInFragment())
-                .addToBackStack(null)
-                .commit()
+            navController.navigate(R.id.action_signUp_to_signIn)
         }
 
 

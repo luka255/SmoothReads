@@ -50,7 +50,7 @@ class SignInFragment : Fragment() {
         }
 
         signUpButton.setOnClickListener {
-            (requireActivity() as MainActivity).replaceFragment(SignUpFragment())
+            navController.navigate(R.id.action_signIn_to_signUp)
         }
 
         return binding.root
