@@ -3,7 +3,6 @@ package com.example.smoothreads
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -38,14 +37,5 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
-
-    }
-
-     fun replaceFragment(fragment:Fragment){
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.nav_host_fragment, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
     }
 }

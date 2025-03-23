@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_myBooks_to_more"
             app:destination="@id/moreFragment" />
+        <action
+            android:id="@+id/action_myBooks_to_readBooks"
+            app:destination="@+id/readBooksFragment"/>
     </fragment>
 
     <fragment
@@ -79,5 +82,10 @@
         tools:layout="@layout/fragment_profile"
         />
 
+    <fragment
+        android:id="@+id/readBooksFragment"
+        android:name="com.example.smoothreads.ReadBooksFragment"
+        android:label="Read Books"
+        tools:layout="@layout/fragment_read_books"/>
 </navigation>
 
