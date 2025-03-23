@@ -32,6 +32,10 @@ class MoreFragment : Fragment() {
             navController.navigate(R.id.signInFragment)
         }
 
+        profileButton.setOnClickListener {
+            navController.navigate(R.id.action_more_to_profile)
+        }
+
         return binding.root
     }
 }

@@ -16,4 +16,8 @@
     <string name="young_nadults">Young\nAdults</string>
     <string name="log_out">Log Out</string>
     <string name="profile">Profile</string>
+    <string name="top_books">Top Books:</string>
+    <string name="genres">Genres:</string>
+    <string name="profilepicture">ProfilePicture</string>
+    <string name="profilePicture" />
 </resources>

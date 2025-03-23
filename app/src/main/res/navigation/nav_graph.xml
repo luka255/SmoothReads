@@ -15,6 +15,19 @@
     </fragment>
 
     <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.smoothreads.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signIn_to_myBooks"
+            app:destination="@id/myBooksFragment" />
+        <action
+            android:id="@+id/action_signIn_to_signUp"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/myBooksFragment"
         android:name="com.example.smoothreads.MyBooksFragment"
         android:label="MyBooks"
@@ -54,20 +67,17 @@
         <action
             android:id="@+id/action_more_to_signIn"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_more_to_profile"
+            app:destination="@+id/profileFragment"/>
     </fragment>
 
     <fragment
-        android:id="@+id/signInFragment"
-        android:name="com.example.smoothreads.SignInFragment"
-        android:label="Sign In"
-        tools:layout="@layout/fragment_sign_in">
-        <action
-            android:id="@+id/action_signIn_to_myBooks"
-            app:destination="@id/myBooksFragment" />
-        <action
-            android:id="@+id/action_signIn_to_signUp"
-            app:destination="@id/signUpFragment" />
-    </fragment>
+        android:id="@+id/profileFragment"
+        android:name="com.example.smoothreads.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile"
+        />
 
 </navigation>
 

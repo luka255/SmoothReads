@@ -33,6 +33,10 @@ class MyBooksFragment : Fragment() {
         readImageButton = binding.ReadImageButton
         navBar = binding.navBar
 
+        wantToReadImageButton.setOnClickListener {
+            navController.navigate(R.id.action_myBooks_to_search)
+        }
+
         return binding.root
     }
 }
