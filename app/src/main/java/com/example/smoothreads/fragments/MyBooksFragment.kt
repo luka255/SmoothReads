@@ -1,4 +1,4 @@
-package com.example.smoothreads
+package com.example.smoothreads.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.smoothreads.R
 import com.example.smoothreads.databinding.FragmentMyBooksBinding
 import com.google.android.material.navigation.NavigationBarView
 

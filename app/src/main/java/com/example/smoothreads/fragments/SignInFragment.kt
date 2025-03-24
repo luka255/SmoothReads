@@ -1,4 +1,4 @@
-package com.example.smoothreads
+package com.example.smoothreads.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.smoothreads.MainActivity
+import com.example.smoothreads.R
 import com.example.smoothreads.databinding.FragmentSignInBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -44,7 +46,8 @@ class SignInFragment : Fragment() {
             else {
                 (requireActivity() as MainActivity).findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.VISIBLE
 
-                navController.navigate(R.id.action_signIn_to_myBooks)
+                navController.popBackStack(R.id.signInFragment,true)
+                navController.navigate(R.id.myBooksFragment)
             }
 
         }
