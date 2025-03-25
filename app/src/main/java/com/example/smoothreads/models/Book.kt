@@ -8,6 +8,7 @@ data class Book(
     var publicationYear: Int,
     var rating: Float,
     var imageUrl: String = "",
+
     var comments: MutableList<Comment> = mutableListOf(),
     var reads: MutableList<Read> = mutableListOf(),
     var wantsToReads: MutableList<WantToRead> = mutableListOf(),
