@@ -21,4 +21,5 @@
     <string name="profilepicture">ProfilePicture</string>
     <string name="profilePicture" />
     <string name="read_books">Read Books</string>
+    <string name="read">Read</string>
 </resources>

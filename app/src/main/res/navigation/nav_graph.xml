@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_myBooks_to_readBooks"
             app:destination="@+id/readBooksFragment"/>
+        <action
+            android:id="@+id/action_myBooks_to_wantToRead"
+            app:destination="@id/wantToReadFragment"/>
     </fragment>
 
     <fragment
@@ -86,6 +89,21 @@
         android:id="@+id/readBooksFragment"
         android:name="com.example.smoothreads.fragments.ReadBooksFragment"
         android:label="Read Books"
-        tools:layout="@layout/fragment_read_books"/>
+        tools:layout="@layout/fragment_read_books">
+        <action
+            android:id="@+id/action_readBooks_to_search"
+            app:destination="@+id/searchFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/wantToReadFragment"
+        android:name="com.example.smoothreads.fragments.ReadBooksFragment"
+        android:label="Want To Read"
+        tools:layout="@layout/fragment_want_to_read">
+        <action
+            android:id="@+id/action_wantToRead_to_search"
+            app:destination="@+id/searchFragment"/>
+    </fragment>
+
 </navigation>
 

@@ -67,7 +67,7 @@ class SignInFragment : Fragment() {
     private fun validSignIn(email : String, password : String) : Boolean
     {
         val testMail = "test@gmail.com"
-        val testPassword = "testPassword123!"
+        val testPassword = "123456Q!"
 
         if(!isValidEmail(email))
             Toast.makeText(requireContext(),"invalid email", Toast.LENGTH_SHORT).show()

@@ -35,7 +35,7 @@ class MyBooksFragment : Fragment() {
         navBar = binding.navBar
 
         wantToReadImageButton.setOnClickListener {
-            navController.navigate(R.id.action_myBooks_to_search)
+            navController.navigate(R.id.action_myBooks_to_wantToRead)
         }
 
         readImageButton.setOnClickListener {

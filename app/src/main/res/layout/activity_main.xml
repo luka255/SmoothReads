@@ -30,10 +30,4 @@
         app:itemTextColor="@color/redBrown"
         tools:visibility="visible" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="12dp"/>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
