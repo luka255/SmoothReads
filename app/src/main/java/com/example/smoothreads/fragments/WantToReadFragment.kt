@@ -13,7 +13,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.smoothreads.R
 import com.example.smoothreads.databinding.FragmentWantToReadBinding
 
-
 class WantToReadFragment : Fragment() {
 
     private lateinit var listView: ListView
@@ -24,7 +23,7 @@ class WantToReadFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        // Inflate the layout for this fragment
         val binding = FragmentWantToReadBinding.inflate(inflater,container,false)
         val navController = findNavController()
 
@@ -34,7 +33,10 @@ class WantToReadFragment : Fragment() {
 
         val bookList = listOf("book1","book2","book3","book4","book5","book6","book7","book8","book9","book10","book11","book12","book13","book14","book15","book16","book17","book18","book19","book20","book21","book22","book23","book24")
 
-        if(!bookList.isEmpty()){
+        /*"book1","book2","book3","book4","book5","book6","book7","book8","book9","book10","book11","book12","book13","book14","book15","book16","book17","book18","book19","book20","book21","book22","book23","book24"*/
+
+        if (!bookList.isEmpty())
+        {
             listView.visibility = View.VISIBLE
             text.visibility = View.GONE
             button.visibility = View.GONE
@@ -44,9 +46,10 @@ class WantToReadFragment : Fragment() {
         }
 
         button.setOnClickListener {
-            navController.navigate(R.id.action_wantToRead_to_search)
+            navController.navigate(R.id.searchFragment)
         }
 
-       return binding.root
+        return binding.root
     }
 }
+

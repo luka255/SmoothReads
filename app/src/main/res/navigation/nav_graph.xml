@@ -97,7 +97,7 @@
 
     <fragment
         android:id="@+id/wantToReadFragment"
-        android:name="com.example.smoothreads.fragments.ReadBooksFragment"
+        android:name="com.example.smoothreads.fragments.WantToReadFragment"
         android:label="Want To Read"
         tools:layout="@layout/fragment_want_to_read">
         <action
