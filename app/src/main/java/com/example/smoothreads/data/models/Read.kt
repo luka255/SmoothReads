@@ -1,4 +1,4 @@
-package com.example.smoothreads.models
+package com.example.smoothreads.data.models
 
 data class Read(
     var id : Int,
