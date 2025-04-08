@@ -18,9 +18,9 @@ interface IUserBooksApiService {
     @POST("want-to-read/{userId}/{bookId}")
     suspend fun addWantToReadBooksAsync(@Path("want-to-Read") wantToReadDto : AddWantToReadDto) : WantToRead
     @POST("read-books/{userId}/{bookId}")
-    suspend fun addWReadBooksAsync(@Path("read-books")readDto : AddReadDto) : Read
+    suspend fun addReadBooksAsync(@Path("read-books")readDto : AddReadDto) : Read
     @DELETE("want-to-read/{userId}/{bookId}")
-    suspend fun deleteWantToReadBookAsync(userId : Int, bookId : Int) : WantToRead
+    suspend fun deleteWantToReadBookAsync(@Path("userId") userId : Int,@Path("bookId") bookId : Int) : WantToRead
     @DELETE("read-books/{userId}/{bookId}")
-    suspend fun deleteReadBookAsync(userId : Int, bookId : Int) : Read
+    suspend fun deleteReadBookAsync(@Path("userId") userId : Int,@Path("bookId") bookId : Int) : Read
 }

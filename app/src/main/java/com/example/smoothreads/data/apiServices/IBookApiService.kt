@@ -15,15 +15,15 @@ interface IBookApiService
     @GET("books")
     suspend fun getAllBookAsync(): List<BookDto>
     @GET("genre/{genre}")
-    suspend fun getBooksByGenreAsync(genre : String): List<Book>
+    suspend fun getBooksByGenreAsync(@retrofit2.http.Path("genre") genre : String): List<Book>
     @GET("id/{id}")
-    suspend fun getBooksByIdAsync(id : Int): BookDto?
+    suspend fun getBooksByIdAsync(@retrofit2.http.Path("id") id : Int): BookDto?
     @POST
     suspend fun addBookAsync(@Body bookDto: AddBookDto): Book
     @PUT
-    suspend fun updateBookAsync(bookId : Int,@Body updatedBook : UpdateBookDto): Book?
+    suspend fun updateBookAsync(@retrofit2.http.Path("id") bookId : Int,@Body updatedBook : UpdateBookDto): Book?
     @DELETE
-    suspend fun deleteBookAsync(bookId : Int): Book?
+    suspend fun deleteBookAsync(@retrofit2.http.Path("id") bookId : Int): Book?
     suspend fun bookExists(bookId : Int): Boolean
 
 }
