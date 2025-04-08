@@ -13,11 +13,21 @@ object RetrofitInstance {
             .build()
     }
 
-    val BookApiService: IBookApiService by lazy{
+    val IBookApiService: IBookApiService by lazy{
         retrofit.create(IBookApiService::class.java)
     }
 
-    val CommentApiService: ICommentApiService by lazy{
+    val ICommentApiService: ICommentApiService by lazy{
         retrofit.create(ICommentApiService::class.java)
     }
+    val IUserApiService: ICommentApiService by lazy{
+        retrofit.create(IUserApiService::class.java)
+    }
+    val IFavouriteApiService: ICommentApiService by lazy{
+        retrofit.create(IFavouriteApiService::class.java)
+    }
+    val IUserBooksApiService: ICommentApiService by lazy{
+        retrofit.create(IUserBooksApiService::class.java)
+    }
+
 }
