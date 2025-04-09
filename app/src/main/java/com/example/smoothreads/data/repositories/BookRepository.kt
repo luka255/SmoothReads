@@ -2,7 +2,6 @@ package com.example.smoothreads.data.repositories
 
 import com.example.smoothreads.DTOs.Book.AddBookDto
 import com.example.smoothreads.DTOs.Book.BookDto
-import com.example.smoothreads.DTOs.Book.UpdateBookDto
 import com.example.smoothreads.data.apiServices.IBookApiService
 import com.example.smoothreads.data.models.Book
 
@@ -24,8 +23,8 @@ class BookRepository(private val api: IBookApiService) {
         return api.addBookAsync(bookDto)
     }
 
-    suspend fun deleteBook(bookId : Int, updateBookDto: UpdateBookDto) : Book? {
-        return api.updateBookAsync(bookId, updateBookDto)
+    suspend fun deleteBook(bookId : Int) : Book? {
+        return api.deleteBookAsync(bookId)
     }
 
     suspend fun bookExists(bookId: Int) : Boolean {

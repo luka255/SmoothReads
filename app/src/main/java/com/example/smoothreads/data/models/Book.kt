@@ -3,7 +3,8 @@ package com.example.smoothreads.data.models
 data class Book(
     var id: Int,
     var title: String = "",
-    var author: String ="",
+    var author: String = "",
+    var genre: String = "",
     var description: String="",
     var publicationYear: Int,
     var rating: Float,

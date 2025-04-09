@@ -1,4 +1,4 @@
-package com.example.smoothreads.fragments
+package com.example.smoothreads.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
