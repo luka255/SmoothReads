@@ -1,5 +1,6 @@
 package com.example.smoothreads.viewmodels
 
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -99,8 +100,8 @@ class BookViewModel (private val bookRepo : BookRepository) : ViewModel() {
         _loading.value = true
         viewModelScope.launch {
             try {
-                val updatedBook = bookRepo.deleteBook(bookId)
-                updatedBook?.let {
+                val deletedBook = bookRepo.deleteBook(bookId)
+                deletedBook?.let {
                     val updatedList = _books.value?.toMutableList() ?: mutableListOf()
                     updatedList.remove(it.toBookDto())
                     _books.value = updatedList
