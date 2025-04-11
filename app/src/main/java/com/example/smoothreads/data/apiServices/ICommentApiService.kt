@@ -18,5 +18,5 @@ interface ICommentApiService {
     @POST("{userId}/{bookId}")
     suspend fun addCommentAsync(commentModel : Comment) : Comment
     @DELETE
-    suspend fun deleteCommentAsync(@Query("commentId") commentId : Int) : Comment
+    suspend fun deleteCommentAsync(@Query("commentId") commentId : Int) : Comment?
 }

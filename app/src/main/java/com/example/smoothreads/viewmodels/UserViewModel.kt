@@ -104,12 +104,16 @@ class UserViewModel (private val userRepo : UserRepository) : ViewModel(){
         var exists = false
         viewModelScope.launch {
             try {
-                exists = userExists(userId)
+                exists = userRepo.userExist(userId)
             }catch (e : Exception){
                 exists = false
             }
         }
         return exists
+    }
+
+    fun clearError(){
+        _error.value = null
     }
 }
 

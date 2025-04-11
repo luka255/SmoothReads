@@ -86,6 +86,7 @@ class BookViewModel (private val bookRepo : BookRepository) : ViewModel() {
             try {
                 val newBook = bookRepo.addBook(book)
                 val updatedList = _books.value?.toMutableList() ?: mutableListOf()
+
                 updatedList.add(newBook.toBookDto())
                 _books.value = updatedList
             }catch (e: Exception){

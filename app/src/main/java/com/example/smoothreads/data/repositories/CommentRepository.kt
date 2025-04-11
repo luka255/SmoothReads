@@ -21,7 +21,7 @@ class CommentRepository (private val api : ICommentApiService){
         return api.addCommentAsync(commentModel)
     }
 
-    suspend fun deleteComment(commentId : Int) : Comment {
+    suspend fun deleteComment(commentId : Int) : Comment? {
         return api.deleteCommentAsync(commentId)
     }
 }
