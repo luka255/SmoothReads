@@ -1,6 +1,5 @@
 package com.example.smoothreads.viewmodels
 
-import com.example.smoothreads.extensions.toUserDto
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.smoothreads.DTOs.User.CreateUserDto
 import com.example.smoothreads.DTOs.User.UserDto
 import com.example.smoothreads.data.repositories.UserRepository
+import com.example.smoothreads.extensions.toUserDto
 import kotlinx.coroutines.launch
 import okio.IOException
 
@@ -99,4 +99,17 @@ class UserViewModel (private val userRepo : UserRepository) : ViewModel(){
             }
         }
     }
+
+    fun userExists(userId : Int) : Boolean{
+        var exists = false
+        viewModelScope.launch {
+            try {
+                exists = userExists(userId)
+            }catch (e : Exception){
+                exists = false
+            }
+        }
+        return exists
+    }
 }
+
