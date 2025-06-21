@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "779415515132",
+    "project_id": "smoothreads-ed13d",
+    "storage_bucket": "smoothreads-ed13d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779415515132:android:59443e14cd39ede4720c79",
+        "android_client_info": {
+          "package_name": "com.example.smoothreads"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkXMG4Wg9tz4R7mXasOXq7UjZvDCtP6p8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
