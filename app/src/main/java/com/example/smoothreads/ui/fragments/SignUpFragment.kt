@@ -9,8 +9,10 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.smoothreads.MainActivity
 import com.example.smoothreads.R
 import com.example.smoothreads.databinding.FragmentSignUpBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class SignUpFragment : Fragment() {
@@ -44,7 +46,8 @@ class SignUpFragment : Fragment() {
             if(validRegistrationForm(name,email,password))
             {
 
-                navController.navigate(R.id.action_signUp_to_signIn)
+                (requireActivity() as MainActivity).findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.VISIBLE
+                navController.navigate(R.id.action_signUp_to_myBook)
 
                 Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
             }
@@ -70,15 +73,11 @@ class SignUpFragment : Fragment() {
         return password.matches(regex)
     }
     private fun validRegistrationForm(name:String,email:String,password: String):Boolean{
-        if(name == null){
-            nameEditText.error="name field should be filled"
-            return false
-        }
         if(!isValidEmail(email)) {
             emailEditText.error = "invalid email"
             return false
         }
-        if(!isValidPassword(password)){
+        if(isValidPassword(password)){
             passwordEditText.error = "Password must be at least 8 chars, include 1 uppercase, 1 number, and 1 special char"
             return false
         }

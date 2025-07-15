@@ -10,8 +10,11 @@
         android:label="SignUp"
         tools:layout="@layout/fragment_sign_up">
         <action
+            android:id="@+id/action_signUp_to_myBook"
+            app:destination="@+id/myBooksFragment"/>
+        <action
             android:id="@+id/action_signUp_to_signIn"
-            app:destination="@+id/signInFragment"/>
+            app:destination="@id/signInFragment" />
     </fragment>
 
     <fragment
@@ -57,6 +60,9 @@
         <action
             android:id="@+id/action_search_to_more"
             app:destination="@id/moreFragment" />
+        <action
+            android:id="@+id/action_search_to_bookList"
+            app:destination="@+id/bookListFragment"/>
     </fragment>
 
     <fragment
@@ -104,6 +110,22 @@
             android:id="@+id/action_wantToRead_to_search"
             app:destination="@+id/searchFragment"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="com.example.smoothreads.ui.fragments.BookListFragment"
+        android:label="Book List"
+        tools:layout="@layout/fragment_book_list">
+        <action
+            android:id="@+id/action_bookList_to_theBook"
+            app:destination="@+id/bookFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookFragment"
+        android:name="com.example.smoothreads.ui.fragments.BookFragment"
+        android:label="Book"
+        tools:layout="@layout/fragment_book"/>
 
 </navigation>
 

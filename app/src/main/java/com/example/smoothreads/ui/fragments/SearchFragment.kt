@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.smoothreads.R
 import com.example.smoothreads.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
@@ -34,6 +35,26 @@ class SearchFragment : Fragment() {
         fictionButton = binding.fictionButton
         nonFictionButton = binding.nonFictionButton
         youngAdultsButton = binding.youngAdultsButton
+
+
+        classicsButton.setOnClickListener {
+            navController.navigate(R.id.action_search_to_bookList)
+        }
+        romanceButton.setOnClickListener {
+            navController.navigate(R.id.action_search_to_bookList)
+        }
+        fantasyButton.setOnClickListener {
+            navController.navigate(R.id.action_search_to_bookList)
+        }
+        fictionButton.setOnClickListener {
+            navController.navigate(R.id.action_search_to_bookList)
+        }
+        nonFictionButton.setOnClickListener {
+            navController.navigate(R.id.action_search_to_bookList)
+        }
+        youngAdultsButton.setOnClickListener {
+            navController.navigate(R.id.action_search_to_bookList)
+        }
 
         return binding.root
     }
