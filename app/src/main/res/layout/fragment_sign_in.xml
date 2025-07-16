@@ -63,6 +63,7 @@
         android:text="Sign In"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_input_signIn"
+        android:backgroundTint="@color/redBrown"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -74,6 +75,7 @@
         android:text="Sign Up"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_input_signIn"
+        android:backgroundTint="@color/redBrown"
         tools:ignore="HardcodedText" />
 
 

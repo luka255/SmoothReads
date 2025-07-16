@@ -31,6 +31,10 @@ class BookListFragment : Fragment() {
         val adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,bookList1)
         listView.adapter = adapter
 
+        listView.setOnItemClickListener { parent, view, position, id ->
+            navController.navigate(R.id.action_bookList_to_theBook)
+        }
+
         return binding.root
     }
 
