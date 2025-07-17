@@ -23,7 +23,7 @@ class WantToReadFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val binding = FragmentWantToReadBinding.inflate(inflater,container,false)
         val navController = findNavController()
 
